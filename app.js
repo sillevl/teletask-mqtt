@@ -12,7 +12,7 @@ teletask.on("report", function(report){
           message = report['status'];
           break;
       case Teletask.functions.sensor:
-          message = report['temperature'];
+          message = report['temperature'].toString();
           break;
       default:
 
