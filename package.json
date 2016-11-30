@@ -1,0 +1,24 @@
+{
+  "name": "teletask-mqtt",
+  "version": "0.0.1",
+  "description": "MQTT client for Teletask",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillevl/teletask-mqtt.git"
+  },
+  "keywords": [
+    "mqtt",
+    "teletask",
+    "domotics"
+  ],
+  "author": "Sille Van Landschoot <info@sillevl.be>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sillevl/teletask-mqtt/issues"
+  },
+  "homepage": "https://github.com/sillevl/teletask-mqtt#readme"
+}
