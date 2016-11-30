@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/sillevl/teletask-mqtt/issues"
   },
-  "homepage": "https://github.com/sillevl/teletask-mqtt#readme"
+  "homepage": "https://github.com/sillevl/teletask-mqtt#readme",
+  "dependencies": {
+    "node-teletask": "0.0.6"
+  }
 }
