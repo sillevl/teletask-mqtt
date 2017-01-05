@@ -5,7 +5,7 @@ var mqtt  = require('mqtt').connect({ host: settings.mqtt.host, port: settings.m
 var teletask = new Teletask.connect(settings.teletask.host,settings.teletask.port);
 
 teletask.on("report", function(report){
-  var topic = report['fnc'] + '/' + report['number'] + '/';
+  var topic = 'teletask/' + report['fnc'] + '/' + report['number'];
   var message = '';
   switch (Teletask.functions[report.fnc]) {
       case Teletask.functions.relay:
