@@ -25,5 +25,20 @@ teletask.log(Teletask.functions.relay);
 teletask.log(Teletask.functions.sensor);
 
 mqtt.on('connect', function () {
-    console.log("MQTT connected");
+  console.log("MQTT connected");	
+	mqtt.subscribe('teletask/+/+/set');
 });
+
+mqtt.on('message', function(topic, message) {
+	console.log("SET received on " + topic + ": " + message);
+	var fnc = topic.split('/')[1];
+  var number = topic.split('/')[2];
+	switch(Teletask.functions[fnc]) {
+		case Teletask.functions.relay:
+			var value = (message.toString().toLowerCase() == 'on') ? Teletask.settings.on : Teletask.settings.off;
+			teletask.set(Teletask.functions[fnc], number, value);
+			break;
+		default:
+	}
+});
+
