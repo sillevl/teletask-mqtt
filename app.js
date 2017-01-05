@@ -17,6 +17,7 @@ teletask.on("report", function(report){
       default:
 
   }
+	console.log(topic + ": " + message);
   mqtt.publish(topic, message)
 });
 
