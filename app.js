@@ -14,6 +14,8 @@ teletask.on("report", function(report){
       case Teletask.functions.sensor:
           message = report['temperature'].toFixed(1);
           break;
+		  case Teletask.functions.dimmer:
+					message = report['status'].toString();
       default:
 
   }
@@ -23,6 +25,7 @@ teletask.on("report", function(report){
 
 teletask.log(Teletask.functions.relay);
 teletask.log(Teletask.functions.sensor);
+teletask.log(Teletask.functions.dimmer);
 
 mqtt.on('connect', function () {
   console.log("MQTT connected");	
