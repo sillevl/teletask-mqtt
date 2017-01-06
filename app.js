@@ -41,6 +41,10 @@ mqtt.on('message', function(topic, message) {
 			var value = (message.toString().toLowerCase() == 'on') ? Teletask.settings.on : Teletask.settings.off;
 			teletask.set(Teletask.functions[fnc], number, value);
 			break;
+	  case Teletask.functions.dimmer:
+			var value = parseInt(message);
+			teletask.set(Teletask.functions[fnc], number, value);
+			break;
 		default:
 	}
 });
