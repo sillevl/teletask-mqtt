@@ -1,4 +1,11 @@
-var settings = require('./settings.json');
+var argv = require('minimist')(process.argv.slice(2));
+
+var configfile = './settings.json';
+if(argv.config) {
+  configfile = argv.config;
+}
+
+var settings = require(configfile);
 var Teletask = require('node-teletask');
 
 var mqtt  = require('mqtt').connect({ host: settings.mqtt.host, port: settings.mqtt.port })
@@ -28,7 +35,7 @@ teletask.log(Teletask.functions.sensor);
 teletask.log(Teletask.functions.dimmer);
 
 mqtt.on('connect', function () {
-  console.log("MQTT connected");	
+  console.log("MQTT connected");
 	mqtt.subscribe('teletask/+/+/set');
 });
 
@@ -48,4 +55,3 @@ mqtt.on('message', function(topic, message) {
 		default:
 	}
 });
-

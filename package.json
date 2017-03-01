@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/sillevl/teletask-mqtt#readme",
   "dependencies": {
+    "minimist": "^1.2.0",
     "mqtt": "^2.1.3",
     "node-teletask": "0.0.6"
   }
