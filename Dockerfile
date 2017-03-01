@@ -14,4 +14,4 @@ COPY . /usr/src/app
 
 VOLUME /config
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "start" , "--", "--config", "/config/settings.json"]
