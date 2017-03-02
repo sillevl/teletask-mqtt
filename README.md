@@ -1,2 +1,9 @@
 # teletask-mqtt
-MQTT  client for Teletask
+MQTT bridge for Teletask
+
+
+## Docker
+
+```
+docker run -it -v /path-to-config:/config sillevl/teletask-mqtt
+```
