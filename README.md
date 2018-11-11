@@ -40,3 +40,41 @@ MQTT bridge for Teletask
 ```
 docker run -it -v /path-to-config:/config sillevl/teletask-mqtt
 ```
+
+## MQTT Topics
+
+### Subscribing
+
+Listening for new values
+
+```
+teletask/[function]/[number]
+```
+
+example:
+
+```
+teletask/relay/20
+```
+
+This will subscribe to the state of relay 20
+
+### Publishing
+
+Updating state
+
+```
+teletask/relay/20/set
+```
+
+To change the state of relay 20, a value of `on` or `off` must be send to this topic
+
+## Functions
+
+### Relay
+
+State values can be:
+
+* on
+* off
+
