@@ -42,10 +42,7 @@ teletask.log(Teletask.functions.relay)
 teletask.log(Teletask.functions.sensor)
 teletask.log(Teletask.functions.dimmer)
 
-const mqtt = require('mqtt').connect({
-  host: settings.mqtt.host,
-  port: settings.mqtt.port
-})
+const mqtt = require('mqtt').connect(settings.mqtt)
 
 mqtt.on('connect', () => {
   console.log(`MQTT connected (${settings.mqtt.host}:${settings.mqtt.port})`)
