@@ -1,6 +1,6 @@
 const argv = require('minimist')(process.argv.slice(2))
 
-const configfile = './settings.json'
+let configfile = './settings.json'
 if (argv.config) {
   configfile = argv.config
 }
