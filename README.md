@@ -30,7 +30,9 @@ MQTT bridge for Teletask
     },
     "mqtt": {
         "host": "192.168.1.2",
-        "port": 1883
+        "port": 1883,
+        "username": "foo",
+        "password": "bar"
     }
 }
 ```
