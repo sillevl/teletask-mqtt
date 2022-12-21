@@ -106,14 +106,14 @@ An example of integrating a `light` in the Home Assistant `configuration.yaml`
 The number in the `topic`s should be configured with the number that is being assigned within the Teletask configuration.
 
 ```yaml
-light:
-  - platform: mqtt 
-    command_topic: "teletask/relay/16/set"
-    state_topic: "teletask/relay/16"
-    name: Kitchen
-    payload_on: "on"
-    payload_off: "off"
-    unique_id: "teletask/relay/16"
+mqtt:
+  light:  
+        command_topic: "teletask/relay/16/set"
+        state_topic: "teletask/relay/16"
+        name: Kitchen
+        payload_on: "on"
+        payload_off: "off"
+        unique_id: "teletask/relay/16"
 ```
 
 ### Sensor example configuration
@@ -123,9 +123,9 @@ An example of integrating a `sensor` in the Home Assistant `configuration.yaml`
 The number in the `topic`s should be configured with the number that is being assigned within the Teletask configuration.
 
 ```yaml
-sensor:
-  - platform: mqtt
-    state_topic: "teletask/sensor/12"
-    name: Kitchen
-    unit_of_measurement: '°C'
+mqtt:
+  sensor:
+        state_topic: "teletask/sensor/12"
+        name: Kitchen
+        unit_of_measurement: '°C'
 ```
